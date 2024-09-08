@@ -8,8 +8,7 @@ export const store = configureStore({
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware), // return edirik
+    getDefaultMiddleware().concat(productsApi.middleware), 
 });
 
-// İlk sorğunu yerinə yetirmək üçün dispatch
 store.dispatch(productsFetch());

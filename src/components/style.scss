@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: start;
+    gap: 20px;
+    padding: 20px;
+  
+    .header, .buttonBox {
+      width: 100%;
+      
+      h4 {
+        font-weight: bold;
+      }
+    }
+  
+    .buttonBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .cardBoxs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px; 
+      width: 100%; 
+      margin-bottom: 30px;
+      margin-top: 25px;
+    }
+  
+    .custom-button {
+      background-color: whitesmoke;
+      color: black;
+      border-radius: 8px;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  
+  .card {
+    position: relative;
+    width: 100%; 
+    max-width: 310px; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0 auto; 
+  
+    .price-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: white;
+      color: black;
+      padding: 5px 13px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+    .card-image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .card-description {
+      padding: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    width: 50%;
+    max-width: 600px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  
+    .modalContent {
+      text-align: left;
+    }
+  
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  
+    .modal-image {
+      max-width: 80%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  
+    .modal-description {
+      margin: 10px 0;
+      color: gray;
+    }
+  
+    .modal-price {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
+  
+  .counter {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  
+    .counter-button {
+      background: whitesmoke;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  
+    .counter-display {
+      margin: 0 10px;
+      font-size: 1.5em;
+      min-width: 40px;
+      text-align: center;
+    }
+  }
+  
+  .line {
+    color: rgb(212, 212, 212);
+  }
+  
+  li {
+    color: gray;
+  }
+  @media (max-width: 480px) {
+    .content, .modal-content {
+      padding: 10px;
+      .cardBoxs {
+        grid-template-columns: 2fr;
+      }
+  
+    }
+    .imgBox{
+        display: none;
+       }
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        margin-top: 30px;
+           }
+ }
+  @media (min-width: 320px) and (max-width: 768px) {
+    .content, .modal-content {
+      padding: 15px;
+      .cardBoxs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  
+    .imgBox{
+        display: none;
+       }
+       .modal-content{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-top: 30px;
+       }
+}
+ 
+  

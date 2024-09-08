@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Asenkron veri çekme işlemi
 export const fetchMenu = createAsyncThunk('menu/fetchMenu', async () => {
-  const response = await fetch('http://localhost:5000/menu.json'); // JSON dosyasının yolu
+  const response = await fetch('http://localhost:5000/menu.json'); 
   const data = await response.json();
   return data;
 });
@@ -23,7 +22,6 @@ const menuSlice = createSlice({
       })
       .addCase(fetchMenu.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.menu = action.payload.menu; // `menu` JSON'dan gelen veriyi tutan key
       })
       .addCase(fetchMenu.rejected, (state, action) => {
         state.isLoading = false;
